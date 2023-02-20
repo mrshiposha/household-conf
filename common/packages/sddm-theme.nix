@@ -1,10 +1,10 @@
-{ resolution, stdenv, fetchFromGitLab }: stdenv.mkDerivation rec {
+{ resolution, stdenv, fetchFromGitLab, rsync }: stdenv.mkDerivation rec {
   pname = "simplicity-sddm-theme";
   version = "1.0";
   dontBuild = true;
   installPhase = let login-screen = ../images/${resolution}/login-screen.jpg; in ''
     mkdir -p $out/share/sddm/themes
-    rsync -av $src/simplicity $out/share/sddm/themes --exclude images/background.jpg
+    ${rsync/bin/rsync} -av $src/simplicity $out/share/sddm/themes --exclude images/background.jpg
     cp ${login-screen} $out/share/sddm/themes/simplicity/images/background.jpg
   '';
   src = fetchFromGitLab {
