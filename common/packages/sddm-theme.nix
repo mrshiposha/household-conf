@@ -2,7 +2,7 @@
   pname = "simplicity-sddm-theme";
   version = "1.0";
   dontBuild = true;
-  installPhase = let login-screen = "../images/${resolution}/login-screen.jpg"; in ''
+  installPhase = let login-screen = ../images/${resolution}/login-screen.jpg; in ''
     mkdir -p $out/share/sddm/themes
     cp -a $src/simplicity $out/share/sddm/themes
     cp ${login-screen} $out/share/sddm/themes/simplicity/images/background.jpg
