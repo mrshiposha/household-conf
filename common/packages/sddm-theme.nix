@@ -5,7 +5,7 @@
   installPhase = ''
     mkdir -p $out/share/sddm/themes
     cp -a $src/simplicity $out/share/sddm/themes
-    cp /household/common/images/1920x1080/login-screen.jpg $out/share/sddm/themes/simplicity/images/background.jpg
+    cp /household-conf/common/images/1920x1080/login-screen.jpg $out/share/sddm/themes/simplicity/images/background.jpg
   '';
   src = fetchFromGitLab {
     owner = "isseigx";
