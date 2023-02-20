@@ -6,6 +6,8 @@
     mkdir -p $out/share/sddm/themes
     cp -a $src/simplicity $out/share/sddm/themes
     chmod +w $out/share/sddm/themes/simplicity/images/background.jpg
+    ls -la $out/share/sddm/themes/simplicity
+    ls -la $out/share/sddm/themes/simplicity/images
     rm $out/share/sddm/themes/simplicity/images/background.jpg
     cp ${login-screen} $out/share/sddm/themes/simplicity/images/background.jpg
   '';
