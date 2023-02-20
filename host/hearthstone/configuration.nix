@@ -1,12 +1,13 @@
 let 
   root = ./../..;
   host = "hearthstone";
+  resolution = "1920x1080";
 in {
   imports = [
     (
       import "${root}/boot.nix" {
         silentBoot = true;
-        resolution = "1920x1080";
+        inherit resolution;
       }
     )
     "${root}/kernel.nix"
@@ -14,7 +15,7 @@ in {
     "${root}/timezone.nix"
     "${root}/shell.nix"
     "${root}/base-sysenv.nix"
-    "${root}/displaymanager.nix"
+    (import "${root}/displaymanager.nix" resolution)
     "${root}/users.nix"
     (import "${root}/home-manager.nix" host)
     "${root}/compositor.nix"
