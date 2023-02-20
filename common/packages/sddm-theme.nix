@@ -4,9 +4,8 @@
   dontBuild = true;
   installPhase = let login-screen = ../images/${resolution}/login-screen.jpg; in ''
     mkdir -p $out/share/sddm/themes
-    cp -r $src/simplicity $out/share/sddm/themes
-    ls -la $out/share/sddm/themes/simplicity
-    ls -la $out/share/sddm/themes/simplicity/images
+    cp -a $src/simplicity $out/share/sddm/themes
+    chmod +w $out/share/sddm/themes/simplicity/images/background.jpg
     rm $out/share/sddm/themes/simplicity/images/background.jpg
     cp ${login-screen} $out/share/sddm/themes/simplicity/images/background.jpg
   '';
