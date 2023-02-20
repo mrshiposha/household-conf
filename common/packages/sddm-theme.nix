@@ -4,11 +4,7 @@
   dontBuild = true;
   installPhase = let login-screen = ../images/${resolution}/login-screen.jpg; in ''
     mkdir -p $out/share/sddm/themes
-    cp -a $src/simplicity $out/share/sddm/themes
-    chmod og+w $out/share/sddm/themes/simplicity/images/background.jpg
-    ls -la $out/share/sddm/themes/simplicity
-    ls -la $out/share/sddm/themes/simplicity/images
-    rm $out/share/sddm/themes/simplicity/images/background.jpg
+    rsync -av $src/simplicity $out/share/sddm/themes --exclude images/background.jpg
     cp ${login-screen} $out/share/sddm/themes/simplicity/images/background.jpg
   '';
   src = fetchFromGitLab {
