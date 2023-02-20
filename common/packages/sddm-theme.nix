@@ -5,9 +5,9 @@
   buildInputs = [ rsync ];
   installPhase = let login-screen = ../images/${resolution}/login-screen.jpg; in ''
     mkdir -p $out/share/sddm/themes
-    mkdir -p $out/share/sddm/themes/simplicity
-    rsync -av $src/simplicity $out/share/sddm/themes --exclude images/background.jpg
+    mkdir -p $out/share/sddm/themes/simplicity/images
     cp ${login-screen} $out/share/sddm/themes/simplicity/images/background.jpg
+    rsync -av $src/simplicity $out/share/sddm/themes --exclude images/background.jpg
   '';
   src = fetchFromGitLab {
     owner = "isseigx";
