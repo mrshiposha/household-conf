@@ -5,6 +5,6 @@ resolution: {pkgs, ...}: {
   services.xserver.enable = true;
 
   environment.systemPackages = [
-    (pkgs.callPackage ./common/packages/sddm-theme { inherit resolution; })
+    (pkgs.callPackage ./common/packages/sddm-theme.nix { inherit resolution; })
   ];
 }
