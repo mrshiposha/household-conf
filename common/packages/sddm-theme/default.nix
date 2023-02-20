@@ -1,4 +1,4 @@
-resolution: { stdenv, fetchFromGitLab }: stdenv.mkDerivation rec {
+{ resolution, stdenv, fetchFromGitLab }: stdenv.mkDerivation rec {
   pname = "simplicity-sddm-theme";
   version = "1.0";
   dontBuild = true;
