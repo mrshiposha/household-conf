@@ -3,5 +3,6 @@
     git
     curl
     pciutils
+    nix-prefetch-git
   ];
 }
