@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub }: {
+{ stdenv, fetchFromGitLab }: {
   simplicity-sddm-theme = stdenv.mkDerivation rec {
     pname = "simplicity-sddm-theme";
     version = "1.0";
